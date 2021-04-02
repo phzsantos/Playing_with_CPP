@@ -1,29 +1,20 @@
 #include "project.h"
 
 void _help(){
+	system("clear");
 	std::cout << ":::::>>>> É UM ANO BISSEXTO? <<<<:::::\n"
 	       	     "\nPara iniciar o programa:\n"
 	     	     "./a.out --start [Ano que você quer saber se é bissexto]\n";	     
 }
 
-void _retorno(){
-	std::cout << "Esse ano não é bissexto" << '\n';
-}
-
-
 int calculo( int ano ){
-	if(( ano % 4) == 0){
-		if(( ano % 100) == 0){
-			if((ano % 400) == 0){
-				std::cout << "esse ano é bissexto" << '\n'; 
-			}else{
-				_retorno();
-			} 
-		}else{
-			_retorno();
-		}
+	system("clear");
+	if( ano < 107 ){
+		std::cout << "Antes do ano 107 d.C não tinhamos anos bissexto. Portanto, esse ano não é bissexto." << '\n'; 
+	}else if(( ano % 400 == 0) || ( ano % 4 == 0) && ( ano % 100 != 0)){
+		std::cout << "Esse ano é bissexto!" << '\n';
 	}else{
-		_retorno();
+		std::cout << "Esse ano não é bissexto!" << '\n';
 	}
 	return 0;
 }
