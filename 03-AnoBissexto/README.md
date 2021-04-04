@@ -18,3 +18,27 @@ De 100 em 100 anos não temos ano bissexto...:
 
 ... exceto se forem múltiplos de 400:
 400, 800, 1200, 1600... são bissextos
+
+**Logica de como eu resolvi esse exercicio**
+
+Basicamente um ano bissexto é um ano que é divisivel por 400 ou divisivel por 4 e ao mesmo tempo não divisivel  por 100.
+
+Simplificando:
+
+O ano tem que ser divisivel por 400;
+
+OU
+
+O ano tem que ser divisivel por 4 e ao mesmo não pode ser divisivel por 100.
+
+SENÃO SE ENCAIXAR NAS DUAS CONDIÇÕES:
+
+Ele não é bissexto
+
+Escrevendo isso em pseudo-codigo:
+
+se((ano / 400 == resto 0) OU (ano / 4 == resto 0) E (ano / 100 == resto diferente de 0)){
+	escreva: esse ano é bissexto
+}senao{
+	escreva: esse ano não é bissexto
+}
