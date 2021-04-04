@@ -6,13 +6,19 @@ void _help(){
 		     "./a.out --start [numero que você quer saber se é primo]\n";
 }
 
+int inicial, divisores = 0;
+
 int calculo( int numero ){
-	if( (numero == 2) || (numero == 3) || (numero == 5) || (numero == 7) || (numero == 11) || (numero == 13)){  
+	for( inicial = 1; inicial<=numero; inicial++){
+		if(numero % inicial == 0){
+			divisores++;
+		}
+	}
+	
+	if(divisores == 2){
 		std::cout << "Esse número é primo" << '\n';
-	}else if(( numero % 2 == 0 ) || ( numero % 3 == 0 ) || ( numero % 5 == 0 ) || ( numero % 7 == 0 ) || ( numero % 11 == 0 ) || ( numero % 13 == 0 )){
-		std::cout << "Esse número não é primo" << '\n';
 	}else{
-		std::cout << "Esse número é primo" << '\n';
+		std::cout << "Esse número não é primo" << '\n';
 	}
 	return 0;
 }
