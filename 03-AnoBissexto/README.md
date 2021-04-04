@@ -37,8 +37,10 @@ Ele não é bissexto
 
 Escrevendo isso em pseudo-codigo:
 
+```
 se((ano / 400 == resto 0) OU (ano / 4 == resto 0) E (ano / 100 == resto diferente de 0)){
 	escreva: esse ano é bissexto
 }senao{
 	escreva: esse ano não é bissexto
 }
+```
