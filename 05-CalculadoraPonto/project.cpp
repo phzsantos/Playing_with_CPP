@@ -1,7 +1,6 @@
-#include <iostream>
-using namespace std;
+#include "project.h"
 
-int main(){
+int programa(){
 	int hr_1 = {0}, hr_2 = {0}, min_1 = {0}, min_2 = {0}, hr_t ={0}, min_t = {0};
 	
 	cout << "Que horas iniciais: ";
