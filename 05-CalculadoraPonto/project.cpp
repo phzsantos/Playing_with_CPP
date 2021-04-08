@@ -3,19 +3,19 @@
 int programa(){
 	int hr_1 = {0}, hr_2 = {0}, min_1 = {0}, min_2 = {0}, hr_t ={0}, min_t = {0};
 	
-	cout << "Que horas iniciais: ";
+	cout << "Que hora você saiu: ";
 	cin >> hr_1;
        	cout << '\n';
 
-	cout << "Minutos iniciais: ";
+	cout << "Que minuto você saiu: ";
 	cin >> min_1;
 	cout << '\n';
 
-	cout << "Horas para somar: ";
+	cout << "Hora para somar: ";
 	cin >> hr_2;
 	cout << '\n';
 
-	cout << "Minutos para somar: ";
+	cout << "Minuto para somar: ";
 	cin >> min_2;
 	cout << '\n';
 
