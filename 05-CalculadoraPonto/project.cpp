@@ -27,6 +27,6 @@ int programa(){
 		min_t = min_t - 60;
 	}	
 
-	cout << "Essa é hora que você deve voltar do almoço: " << hr_t << ":" << min_t << '\n';
+	cout << "Essa é hora que você deve voltar do almoço: " << setfill('0') << setw(2) << hr_t << ":" << setfill('0') << setw(2) << min_t << '\n';
 	return 0;
 }
