@@ -1,33 +1,35 @@
 #include "project.h"
 
 int programa(){
-	int hr_1 = {0}, hr_2 = {0}, min_1 = {0}, min_2 = {0}, hr_t ={0}, min_t = {0};
+	int HoraSaida = {0}, HorasIntervalo = {0}, MinutosSaida = {0}, MinutosIntervalo = {0}, HorasTotais ={0}, MinutosTotais = {0};
 	
 	cout << "::::: HORARIO DE SAIDA :::::" << '\n';	
 	cout << "Que HORA você saiu: ";
-	cin >> hr_1;
+	cin >> HoraSaida;
 
 	cout << "Que MINUTO você saiu: ";
-	cin >> min_1;
+	cin >> MinutosSaida;
 	cout << '\n';
 
 	cout << "::::: MINUTOS DE ALMOÇO OU HORAS PARA SOMAR :::::" << '\n';
 	cout << "Quantas HORAS você tem de almoço: ";
-	cin >> hr_2;
+	cin >> HorasIntervalo;
 
 	cout << "Quantos MINUTOS você tem de almoço: ";
-	cin >> min_2;
+	cin >> MinutosIntervalo;
 	cout << '\n';
+	
+	//Totalizando as horas e os minutos
+	HorasTotais = HoraSaida + HorasIntervalo;
+	MinutosTotais = MinutosSaida + MinutosIntervalo;
 
-	hr_t = hr_1 + hr_2;
-	min_t = min_1 + min_2;
-
-	while(min_t >= 60){
-		hr_t++;
-		min_t = min_t - 60;
+	//Loop para quebrar a hora a cada 60 minutos (Relogio)
+	while(MinutosTotais >= 60){
+		HorasTotais++;
+		MinutosTotais = MinutosTotais - 60;
 	}	
 	
 	cout << "::::: RESULTADO :::::" << '\n';
-	cout << "Essa é hora que você deve voltar do almoço: " << setfill('0') << setw(2) << hr_t << ":" << setfill('0') << setw(2) << min_t << '\n';
+	cout << "Essa é hora que você deve voltar do almoço: " << setfill('0') << setw(2) << HorasTotais << ":" << setfill('0') << setw(2) << MinutosTotais << '\n';
 	return 0;
 }
