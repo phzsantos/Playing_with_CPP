@@ -56,9 +56,9 @@ int programa(){
 	}	
 	
 	cout << "::::: RESULTADO :::::" << '\n';
-	cout << "Essa é a hora MAXIMA que você deve voltar do almoço: " << setfill('0') << setw(2) << HorasTotaisMaximo << ":" << setfill('0') << setw(2) << MinutosTotaisMaximo << '\n';
 	if(FlagMostrarHoraMinima == 1){
 		cout << "Essa é a hora MINIMA que você pode voltar do almoço: " << setfill('0') << setw(2) << HorasTotaisMinimo << ":" << setfill('0') << setw(2) << MinutosTotaisMinimo << '\n';
 	}
+	cout << "Essa é a hora MAXIMA que você deve voltar do almoço: " << setfill('0') << setw(2) << HorasTotaisMaximo << ":" << setfill('0') << setw(2) << MinutosTotaisMaximo << '\n';
 	return 0;
 }
