@@ -28,34 +28,41 @@ int programa(){
 	cin >> MinutosIntervaloMaximo;
 	cout << '\n';
 	
-	if(MinutosIntervaloMaximo != 30){
-		FlagMostrarHoraMinima = {1};
+	if(MinutosIntervaloMaximo < 30){
+		system("clear");
+		cout << "\e[31;1m" << "WARNING!!! Você não pode ter menos que 30 minutos de intervalo. WARNING!!!" << "\e[m" << '\n';
+		cout << '\n';
+		programa();
+	}else{
+		if(MinutosIntervaloMaximo != 30){
+			FlagMostrarHoraMinima = {1};
 
-		//Totalizando as horas e os minutos (MINIMO)
-		HorasTotaisMinimo = HoraSaida + 0;
-		MinutosTotaisMinimo = MinutosSaida + MinutosIntervaloMinimo;
+			//Totalizando as horas e os minutos (MINIMO)
+			HorasTotaisMinimo = HoraSaida + 0;
+			MinutosTotaisMinimo = MinutosSaida + MinutosIntervaloMinimo;
 
-		//Loop para quebrar a hora a cada 60 minutos (Relogio MINIMO)
-		while(MinutosTotaisMinimo >= 60){
-			HorasTotaisMinimo++;
-			MinutosTotaisMinimo = MinutosTotaisMinimo - 60;
+			//Loop para quebrar a hora a cada 60 minutos (Relogio MINIMO)
+			while(MinutosTotaisMinimo >= 60){
+				HorasTotaisMinimo++;
+				MinutosTotaisMinimo = MinutosTotaisMinimo - 60;
+			}
+		}	
+
+		//Totalizando as horas e os minutos (MAXIMO)
+		HorasTotaisMaximo = HoraSaida + HorasIntervalo;
+		MinutosTotaisMaximo = MinutosSaida + MinutosIntervaloMaximo;
+
+		//Loop para quebrar a hora a cada 60 minutos (Relogio MAXIMO)
+		while(MinutosTotaisMaximo >= 60){
+			HorasTotaisMaximo++;
+			MinutosTotaisMaximo = MinutosTotaisMaximo - 60;
 		}
-	}	
-
-	//Totalizando as horas e os minutos (MAXIMO)
-	HorasTotaisMaximo = HoraSaida + HorasIntervalo;
-	MinutosTotaisMaximo = MinutosSaida + MinutosIntervaloMaximo;
-
-	//Loop para quebrar a hora a cada 60 minutos (Relogio MAXIMO)
-	while(MinutosTotaisMaximo >= 60){
-		HorasTotaisMaximo++;
-		MinutosTotaisMaximo = MinutosTotaisMaximo - 60;
+			
+		cout << "::::: RESULTADO :::::" << '\n';
+		if(FlagMostrarHoraMinima == 1){
+			cout << "Essa é a hora MINIMA que você pode voltar do almoço: " << setfill('0') << setw(2) << HorasTotaisMinimo << ":" << setfill('0') << setw(2) << MinutosTotaisMinimo << '\n';
+		}
+		cout << "Essa é a hora MAXIMA que você deve voltar do almoço: " << setfill('0') << setw(2) << HorasTotaisMaximo << ":" << setfill('0') << setw(2) << MinutosTotaisMaximo << '\n';
 	}
-		
-	cout << "::::: RESULTADO :::::" << '\n';
-	if(FlagMostrarHoraMinima == 1){
-		cout << "Essa é a hora MINIMA que você pode voltar do almoço: " << setfill('0') << setw(2) << HorasTotaisMinimo << ":" << setfill('0') << setw(2) << MinutosTotaisMinimo << '\n';
-	}
-	cout << "Essa é a hora MAXIMA que você deve voltar do almoço: " << setfill('0') << setw(2) << HorasTotaisMaximo << ":" << setfill('0') << setw(2) << MinutosTotaisMaximo << '\n';
-	return 0;
+return 0;
 }
