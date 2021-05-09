@@ -28,7 +28,7 @@ int programa(){
 	cin >> MinutosIntervaloMaximo;
 	cout << '\n';
 	
-	if(MinutosIntervaloMaximo < 30){
+	if((HorasIntervalo <= 0) && (MinutosIntervaloMaximo < 30)){
 		system("clear");
 		cout << "\e[31;1m" << "WARNING!!! Você não pode ter menos que 30 minutos de intervalo. WARNING!!!" << "\e[m" << '\n';
 		cout << '\n';
